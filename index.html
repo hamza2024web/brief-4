@@ -7,82 +7,66 @@
     <!-- Bootstrap CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="assets/js/script.js"></script>
 </head>
 <body>
-
-<div class="container mt-5">
-    <img src="Bootstrap workplace/assets/images/photo-1483728642387-6c3bdd6c93e5.jpg" alt="found 1">
-    <div class="card">
-        <div class="card-body">
-            <h2 class="card-title text-center">Formulaire d'Évaluation des Employés</h2>
-
-            <form id="multiSectionForm" onsubmit="submitForm(event)">
-                <!-- Section 1 -->
-                <div class="section">
-                    <div class="container">
-                        <div class="form-group">
-                            <label for="Nom">Nom :</label>
-                            <input name="text" type="text" id="nom" class="form-control" >
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h2 class="card-title text-center">Formulaire d'Évaluation des Employés</h2>
+    
+                <form id="multiSectionForm" onsubmit="">
+                    <!-- Section 1 -->
+                    <div class="section" id="section1">
+                        <div class="container">
+                            <div class="form-group" id ="form">
+                                <label for="Nom">Nom :</label>
+                                <input name="nom" type="text" id="nom" class="form-control"  >
+                                <label for="prenom">Prenom :</label>
+                                <input name="prenom" type="text" id="prenom" class="form-control" >
+                                <label for="date">Date de naissance :</label>
+                                <input name="text" type="text" id="date" class="form-control" placeholder="00/00/0000">
+                                <label for="adresse">Adresse :</label>
+                                <input name="text" type="text" id="adresse" class="form-control" placeholder="">
+                                <label for="phone">Numero de telephone :</label>
+                                <input name="phone" type="text" id="phone" class="form-control" placeholder="060000000000/050000000000/070000000000">
+                                <label for="Adresse E-mail">Adresse E-mail :</label>
+                                <input name="email" type="text" id="mail" class="form-control" placeholder="aaaaaaaaaaaaaa@gmail.com">
+                                <label for="Niveau d'Études">Niveau Scolaire :</label>
+                                <input name="text" type="text" id="Scolaire" class="form-control" placeholder="Dernier Diplôme Obtenu, Établissement">
+                                <label for="Nom">Compétences et Certifications :</label>
+                                <input name="text" type="text" id="competence" class="form-control"> 
+                            </div>
+                            <div class="d-flex justify-content-between mt-3">
+                                <button type="button" class="btn btn-outline-secondary" onclick="prevSection(1)">Previous</button>
+                                <button id="button" type="button" class="btn btn-outline-success" onclick="nextSection(2)">Next</button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="prenom">Prenom :</label>
-                            <input name="text" type="text" id="prenom" class="form-control" >
-                        </div>
-                        <div class="form-group">
-                            <label for="date">Date de naissance :</label>
-                            <input name="text" type="text" id="date" class="form-control" placeholder="00/00/0000">
-                        </div>
-                        <div class="form-group">
-                            <label for="adresse">Adresse :</label>
-                            <input name="text" type="text" id="adresse" class="form-control" placeholder="">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Numero de telephone :</label>
-                            <input name="phone" type="tel" id="phone" class="form-control" placeholder="060000000000/050000000000/070000000000">
-                        </div>
-                        <div class="form-group">
-                            <label for="Adresse E-mail">Adresse E-mail :</label>
-                            <input name="email" type="email" id="mail" class="form-control" placeholder="aaaaaaaaaaaaaa@gmail.com">
-                        </div>
-                        <div class="form-group">
-                            <label for="Niveau d'Études">Niveau Scolaire :</label>
-                            <input name="text" type="text" id="Scolaire" class="form-control" placeholder="Dernier Diplôme Obtenu, Établissement">
-                        </div>
-                        <div class="form-group">
-                            <label for="Nom">Compétences et Certifications :</label>
-                            <input name="text" type="text" id="nom" class="form-control">
-                        </div>
-                        <div class="d-flex justify-content-between mt-3">
-                            <button type="button" class="btn btn-outline-secondary" onclick="prevSection(1)">Previous</button>
-                            <button type="button" class="btn btn-outline-success" onclick="nextSection(3)">Next</button>
-                        </div>
-                    </div>
-                </div>
-                
+                    </div> 
+            </div>
                 <!-- Section 2 -->
                 <div class="section d-none" id="section2">
                     <h1 class="text-center text-success">Informations Professionnelles</h1>
                     <div class="form-group">
                         <label for="Post">Post/Fonction :</label>
-                        <input name="text" type="text" id="text" class="form-control" >
+                        <input name="text" type="text" id="post" class="form-control" >
                     </div>
                     
                     <div class="form-group">
                         <label for="Département">Département :</label>
-                        <input name="text" type="text" id="text" class="form-control" >
+                        <input name="text" type="text" id="depart" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="Date d'Embauche">Date d'Embauche :</label>
-                        <input name="text" type="text" id="text" class="form-control" >
+                        <input name="text" type="date" id="Embauche" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="Numéro d'Identifiant de l'Employé">Numéro d'Identifiant de l'Employé :</label>
-                        <input name="text" type="text" id="text" class="form-control" >
+                        <input name="text" type="text" id="identifiant" class="form-control" >
                     </div>
                     <div class="form-group">
                         <label for="Type de Contrat (Choix : Temps Plein, Temps Partiel, CDD)">Type de Contrat :</label>
-                        <input name="text" type="text" id="text" class="form-control" placeholder="Temps Plein, Temps Partiel, CDD">
+                        <input name="text" type="text" id="Contrat" class="form-control" placeholder="Temps Plein, Temps Partiel, CDD">
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <button type="button" class="btn btn-outline-secondary" onclick="prevSection(1)">Previous</button>
@@ -98,40 +82,18 @@
                     </div>
                     <div class="d-flex justify-content-between mt-3">
                         <button type="button" class="btn btn-secondary" onclick="prevSection(2)">Previous</button>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-primary" id="btn1" onclick="save()">Submit</button>
                     </div>
+                    <div class="card mt-3" style="width: 50rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Saved Data</h5>
+                          <div id="saved-data"></div>
+                        </div>
+                      </div>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<!-- JavaScript for Navigation -->
-<script>
-    function showSection(sectionNumber) {
-        document.querySelectorAll('.section').forEach(section => section.classList.add('d-none'));
-        document.getElementById('section' + sectionNumber).classList.remove('d-none');
-    }
-
-    function nextSection(sectionNumber) {
-        showSection(sectionNumber);
-    }
-
-    function prevSection(sectionNumber) {
-        showSection(sectionNumber);
-    }
-
-    function submitForm(event) {
-        event.preventDefault(); // Prevent default form submission
-        alert("Form submitted successfully!");
-        document.getElementById("multiSectionForm").reset(); // Reset form fields
-        showSection(1); // Reset to the first section
-    }
-</script>
-
-<!-- Bootstrap JS (optional) -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
 </body>
 </html>
